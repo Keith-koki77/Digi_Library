@@ -1,0 +1,14 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <div class="grid grid-cols-3 gap-4">
+        {% for book in books %}
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-bold mb-2">{{ book.title }}</h2>
+            <!-- Other book details -->
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

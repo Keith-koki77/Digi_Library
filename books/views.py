@@ -1,46 +1,84 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.utils import timezone
-from .models import Book, BorrowHistory
+from django.shortcuts import render, redirect
+
+from file.models import Category, File
+
 from .forms import SignupForm
 
-@login_required
+from django.contrib.auth import logout
+
+from django.contrib.auth import logout as auth_logout
+
+
+
 def index(request):
-    books = Book.objects.all()
-    return render(request, 'index.html', {
-        'books': books
+    """
+    This function handles the index page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered index page with categories and items.
+    """
+    files = File.objects.filter(available=True)[0:6]
+    categories = Category.objects.all()
+
+    return render(request, 'books/index.html', {
+        'categories': categories,
+        'files': files,
     })
 
-@login_required
-def book_detail(request, book_id):
-    book = get_object_or_404(Book, id=book_id)
-    return render(request, 'book_detail.html', {
-        'book': book
-    })
 
-@login_required
-def borrow_book(request, book_id):
-    if request.method == 'POST':
-        book = get_object_or_404(Book, id=book_id)
-        BorrowHistory.objects.create(book=book, borrower=request.user)
-        book.available = False
-        book.save()
-        return redirect('index')
-    else:
-        return redirect('index')  # Redirect if accessed via GET or other methods
 
-@login_required
-def return_book(request, book_id):
-    if request.method == 'POST':
-        book = get_object_or_404(Book, id=book_id)
-        borrow_history = get_object_or_404(BorrowHistory, book=book, borrower=request.user, return_date=None)
-        borrow_history.return_date = timezone.now().date()
-        borrow_history.save()
-        book.available = True
-        book.save()
-        return redirect('index')
-    else:
-        return redirect('index')  # Redirect if accessed via GET or other methods
+def landing(request):
+    """
+    This function handles the landing page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered landing page.
+    """
+    return render(request, 'books/landing.html')
+
+
+
+def contact(request):
+    """
+     This function handles the review page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered review page.
+    """
+    return render(request, 'books/contact.html')
+
+
+def about(request):
+    """
+    This function handles the about page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered about page.
+    """
+    return render(request, 'books/about.html')
+
+
+
+def pricing(request):
+    """
+    This function handles the pricing page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered pricing page.
+    """
+    return render(request, 'books/pricing.html')
+
+
+
+def reviews(request):
+    """
+     This function handles the review page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered review page.
+    """
+    return render(request, 'books/reviews.html')
+
 
 
 def signup(request):
@@ -58,3 +96,23 @@ def signup(request):
     return render(request, 'books/signup.html', {
         'form': form
     })
+
+
+
+def logout(request):
+    """
+    This function handles the logout page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered logout page.
+    """
+    return render(request, 'books/logout.html')
+
+
+
+
+
+
+
+
+

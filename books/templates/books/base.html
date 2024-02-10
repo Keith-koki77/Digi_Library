@@ -3,32 +3,113 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{% block title %}{% endblock %} | Digi_Library</title>
+		<title>{% block title %}{% endblock %}| Digi_Library</title>
 		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 	</head>
 
-	<body class="bg-purple-300">
+	<body class="bg-purple-100">
 		<nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
 
 			<a href="/" class="text-xl font-semibold">Library Book Collection</a>
 
 			<div class="space-x-6">
-				<a href="#" class="text-lg font-semibold hover:text-gray-500">New Book</a>
-				<a href="#" class="text-lg font-semibold hover:text-gray-500">Browse</a>
+				{% block extra_css %}
 
-				{% if request.user.is_authenticated %}
-					<a href="#" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
-					<a href="{% url 'books:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Dashboard</a>
-				{% else %}
-					<a href="{% url 'books:signup' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Sign Up</a>
-					<a href="{% url 'books:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Log In</a>
-				{% endif %}
-			</div>
+					<style>
+					  /* Dropdown button */
+					  .dropbtn {
+					    background-color: #4CAF50;
+					    color: white;
+					    padding: 12px;
+					    font-size: 20px;
+					    border: 10px;
+					    cursor: pointer;
+					    width: 120px;
+					  }
+
+					  /* Dropdown button on hover & focus */
+					  .dropbtn:hover, .dropbtn:focus {
+					    background-color: #3e8e41;
+					  }
+
+					  /* Dropdown container (hidden by default) */
+					  .dropdown {
+					    position: relative;
+					    display: inline-block;
+					    border-radius: 30px;
+					  }
+
+					  /* Dropdown content */
+					  .dropdown-content {
+					    display: none;
+					    position: absolute;
+					    background-color: #f9f9f9;
+					    min-width: 160px;
+					    z-index: 1;
+					  }
+
+					  /* Links inside the dropdown */
+					  .dropdown-content a {
+					    color: black;
+					    padding: 12px 16px;
+					    text-decoration: none;
+					    display: block;
+					  }
+
+					  /* Change color of dropdown links on hover */
+					  .dropdown-content a:hover {
+					    background-color: #f1f1f1;
+					  }
+
+					  /* Show the dropdown menu on hover */
+					  .dropdown:hover .dropdown-content {
+					    display: block;
+					  }
+
+					  /* Position the dropdown content */
+					  .dropdown-content {
+					    right: 0; /* Adjust as needed */
+					    top: 100%; /* Position below the button */
+					  }
+					</style>
+				{% endblock %}
+
+				<div class="dropdown">
+					  <button class="dropbtn px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Menu</button>
+					  <div class="dropdown-content">
+						    <a href="{% url 'file:new' %}" class="text-lg font-semibold hover:text-gray-500">New Book</a>
+						    <a href="#{% url 'file:files' %}" class="text-lg font-semibold hover:text-gray-500">Browse</a>
+						    <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
+						    <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-teal-700">Dashboard</a>
+					  </div>
+				</div>
+
+
+				
+    			{% if user.is_authenticated %}
+                    <a href="{% url 'books:logout' %}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-6 border border-blue-700 hover:border-transparent rounded">Log Out</a>
+                {% else %}
+                    <a href="{% url 'books:login' %}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-6 border border-blue-700 hover:border-transparent rounded">Log in</a>
+                {% endif %}
+
+				
+				<a href="{% url 'books:signup' %}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-6 border border-blue-700 hover:border-transparent rounded">Sign Up</a>
+			</div> 
 		</nav>
+
+
 		<div class="container mx-auto py-8">
 			{% block content %}
 			{% endblock %}
 		</div>
+
+
+
+
+
+
+
+		<!--Footer section-->
 
 		<footer class="bg-blue-500 text-white py-4 mt-8">
 			<div class="container mx-auto">
@@ -36,16 +117,16 @@
 					<div>
 						<h3 class="text-lg font-semibold mb-2">Quick Links</h3>
 						<ul>
-							<li><a href="/">Home</a></li>
-							<li><a href="/catalog/">Catalog</a></li>
-							<li><a href="/about/">About Us</a></li>
-							<li><a href="/contact/">Contact</a></li>
+							<li><a href="">Home</a></li
+							<li><a href="{% url 'books:contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
+							<li><a href="{% url 'books:reviews' %}" class="text-lg text-teal-500 hover:text-teal-700">Testimonial</a></li>
 						</ul>
 					</div>
 
 					<div>
 						<h3 class="text-lg font-semibold mb-2">Information</h3>
 						<ul>
+							<li><a href="{% url 'books:about' %}">About Us</a></li>
 							<li><a href="/faq/">FAQs</a></li>
 							<li><a href="/privacy-policy/">Privacy Policy</a></li>
 							<li><a href="/terms-of-service/">Terms of Service</a></li>
@@ -74,5 +155,7 @@
 				<p>&copy; 2024 Library Book Collection</p>
 			</div>
 		</footer>
+		<!--End Footer-->
+
 	</body>
 </html>

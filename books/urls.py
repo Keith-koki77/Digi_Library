@@ -3,7 +3,6 @@ from django.urls import path
 
 from . import views
 from .forms import LoginForm
-from .views import logout
 
 app_name = 'books'
 
@@ -17,5 +16,5 @@ urlpatterns = [
     path('pricing/', views.pricing, name='pricing'),
     path('contact/', views.contact, name='contact'),
    	path('login/', auth_views.LoginView.as_view(template_name='books/login.html', authentication_form=LoginForm), name='login'),
-   	path('logout/', logout, name='logout'),
+   	path('logout/', auth_views.LogoutView.as_view(template_name='books/logout.html'), name='logout'),
 ]

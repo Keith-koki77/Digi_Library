@@ -3,11 +3,12 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import NewFileForm, EditFileForm
-from .models import Category, File
+from .models import Category, File, Payment
+
 
 def files(request):
     """
-     Renders the files page with a list of files based on the request parameters.
+    Renders the files page with a list of files based on the request parameters.
     Parameters:
         - request: The HTTP request object.
     Returns:
@@ -17,13 +18,13 @@ def files(request):
     query = request.GET.get('query', '')
     category_id = request.GET.get('category', 0)
     categories = Category.objects.all()
-    files = File.objects.filter(available=False)
+    files = File.objects.all()
 
     if category_id:
         files = files.filter(category_id=category_id)
 
     if query:
-        files = files.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        files = files.filter(Q(title__icontains=query) | Q(description__icontains=query))
 
     return render(request, 'file/files.html', {
         'files': files,
@@ -31,6 +32,7 @@ def files(request):
         'categories': categories,
         'category_id': int(category_id)
     })
+
 
 def detail(request, pk):
     """
@@ -123,3 +125,31 @@ def delete(request, pk):
     file.delete()
 
     return redirect('dashboard:index')
+
+
+@login_required
+def process_payment(request, file_id):
+    file = get_object_or_404(File, pk=file_id)
+    # Process payment using your payment gateway here
+    # Assuming payment is successful
+    payment = Payment.objects.create(user=request.user, file=file, paid=True)
+    return redirect('file:download', file_id=file_id)  # Corrected redirect URL
+
+@login_required
+def download(request, file_id):
+    file = get_object_or_404(File, pk=file_id)
+    # Check if the user has made a payment for the file
+    if not Payment.objects.filter(user=request.user, file=file, paid=True).exists():
+        # Redirect the user to the payment page or form
+        return redirect('file:payment', file_id=file_id)  # Use correct URL name
+    else:
+        # User has made a payment, allow file download
+        # You can implement file download logic here
+        # For example, return a response with the file content
+        return render(request, 'file/download.html', {'file': file})
+
+@login_required
+def payment(request, file_id):
+    file = get_object_or_404(File, pk=file_id)
+    # Render the payment page or form
+    return render(request, 'file/payment.html', {'file': file})

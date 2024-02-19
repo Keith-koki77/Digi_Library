@@ -34,7 +34,22 @@ def landing(request):
     :param request: The HTTP request object.
     :return: The rendered landing page.
     """
-    return render(request, 'books/landing.html')
+    # Retrieve all categories
+    categories = Category.objects.all()
+
+    # Create a dictionary to store files grouped by category
+    files_by_category = {}
+
+    # Iterate over each category
+    for category in categories:
+        # Retrieve files for the current category
+        files = File.objects.filter(category=category)
+        # Store files in the dictionary with category as key
+        files_by_category[category] = files
+
+
+    # Pass grouped data to template
+    return render(request, 'books/landing.html', {'files_by_category': files_by_category})
 
 
 
@@ -106,7 +121,7 @@ def logout(request):
     :param request: The HTTP request object.
     :return: The rendered logout page.
     """
-    return render(request, 'books/logout.html')
+    return render(request, 'books/landing.html')
 
 
 

@@ -5,163 +5,149 @@
 {% block content %}
 	<div style="font-family: sans-serif;  min-height: 100vh; background-color: #f3f4f6;">
 
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
+		
+		<div style="margin-bottom: 30px;">
 
-	        <div  style="display: inline-grid; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
-	
+			<div>
+				<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+					Welcome to Digi-Library: Your Digital Libarary for E-books.
+				</h4>
 
-	
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
-
-	        <div style=" flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
-
-	
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
-
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
-
-	
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
-
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
-
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
-
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
+				<p>
+					Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+				</p>
+			</div>
 
 
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
+			<div>
+				<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+					Explore Endless Possibilities
+				</h4>
 
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
+				<p>
+					Dive into a treasure trove of e-books spanning various genres, topics, and interests. From timeless classics to contemporary bestsellers, educational resources to niche publications, our extensive library caters to diverse reading preferences and intellectual pursuits.
+				</p>
+			</div>
 
 
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
+			<div>
+				<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+					Seamless Access Anytime, Anywhere
+				</h4>
 
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
+				<p>
+					With Digi-Library, you can access your favorite e-books anytime, anywhere, and on any device. Whether you're at home, on the go, or traveling abroad, our user-friendly platform ensures that your reading experience remains uninterrupted and convenient.
+				</p>
+			</div>
+		</div>
+		
+		<div style="display: inline-grid; grid-template-columns: 2fr; grid-template-rows: auto auto; grid-template-areas: 'header' 'content' 'image'; grid-gap: 5px; width: 250px; height: 350px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box; ">
+			<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+				Welcome to Digi-Library: Your Digital Library for E-books.
+			</h4>
 
-	    <div style="display: inline-grid; max-width: 1200px; margin: 0 auto; padding: 2rem;">
-	        <h1 style="font-size: 2.5rem; color: #3b82f6; font-weight: 700; margin-bottom: 1.5rem;">Welcome to Digi Library</h1>
+			<p style="grid-area: content; font-size: 0.8rem; line-height: 1.2;">
+				Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+			</p>
+		</div>
 
-	        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-	            {% for book in books %}
-	                <div style="width: calc(25% - 1rem); margin-bottom: 1.5rem;">
-	                    <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-	                        <img src="{{ book.image.url }}" alt="{{ book.title }}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: 0.25rem; margin-bottom: 1rem;">
-	                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{{ book.title }}</h2>
-	                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Author: {{ book.author }}</p>
-	                        <p style="color: #4b5563; margin-bottom: 1rem;">{{ book.description }}</p>
-	                        <p style="color: #4b5563; margin-top: 1rem;">{{ book.price }}</p>
-	                        <a href="{% url 'upload_book' %}" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: 700; background-color: #000000; color: #ffffff; border: none; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">Upload Book</a>
-	                    </div>
-	                </div>
-	            {% endfor %}
-	        </div>
-	    </div>
 
+		<div style="display: inline-grid; grid-template-columns: 2fr; grid-template-rows: auto auto; grid-template-areas: 'header' 'content'; grid-gap: 10px; width: 250px; height: 350px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box;">
+			<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+				Welcome to Digi-Library: Your Digital Library for E-books.
+			</h4>
+
+			<p style="grid-area: content; font-size: 0.8rem; line-height: 1.2;">
+				Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+			</p>
+		</div>
+
+
+
+		<div style="display: inline-grid; grid-template-columns: 2fr; grid-template-rows: auto auto; grid-template-areas: 'header' 'content'; grid-gap: 10px; width: 250px; height: 350px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box;">
+			<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+				Welcome to Digi-Library: Your Digital Library for E-books.
+			</h4>
+
+			<p style="grid-area: content; font-size: 0.8rem; line-height: 1.2;">
+				Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+			</p>
+		</div>
+
+
+		<div style="display: inline-grid; grid-template-columns: 2fr; grid-template-rows: auto auto; grid-template-areas: 'header' 'content'; grid-gap: 10px; width: 250px; height: 350px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box;">
+			<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+				Welcome to Digi-Library: Your Digital Library for E-books.
+			</h4>
+
+			<p style="grid-area: content; font-size: 0.8rem; line-height: 1.2;">
+				Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+			</p>
+		</div>
+
+
+		<div style="display: inline-grid; grid-template-columns: 2fr; grid-template-rows: auto auto; grid-template-areas: 'header' 'content'; grid-gap: 10px; width: 250px; height: 350px; border: 1px solid #ccc; padding: 10px; box-sizing: border-box;">
+			<h4 style="grid-area: header; color: #4b5563; font-size: 1.25rem; font-weight: bold;">
+				Welcome to Digi-Library: Your Digital Library for E-books.
+			</h4>
+
+			<p style="grid-area: content; font-size: 0.8rem; line-height: 1.2;">
+				Are you ready to embark on a journey into the world of literature? Look no further! Digi-Library is your ultimate destination for discovering, accessing, and enjoying a vast collection of e-books right at your fingertips. Whether you're an avid reader, a student, or a lifelong learner, our digital library platform has something for everyone.
+			</p>
+		</div>
+
+
+
+	    <h1 style="font-size: 25px; margin-bottom: 10px;">Available Books</h1>
+
+	    {% for category, files in files_by_category.items %}
+		    {% if files %}
+		        <div style="grid-column: span 3; text-align: center;">
+		            <h1 style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">{{ category.name }}</h1>
+		        </div>
+		        <div style="display: flex; flex-wrap: wrap; justify-content: left; gap: 20px;">
+		            {% for file in files %}
+		                {% if forloop.counter <= 6 %} {# Display only the first 6 files #}
+		                    <div style="flex: 0 0 calc(33.33% - 20px); margin-bottom: 20px; border: none; border-radius: 5px; text-align: center;">
+		                        {% if file.image %}
+		                            <img src="{{ file.image.url }}" alt="{{ file.title }} Image" style="width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+		                        {% endif %}
+		                        <div style="padding: 10px;">
+		                            <h2 style="font-size: 20px; margin-bottom: 10px;"><strong>{{ file.title }}</strong></h2>
+		                            <p style="font-size: 16px; margin-bottom: 5px;"><strong>Author:</strong> {{ file.author }}</p>
+		                            <p style="font-size: 16px; margin-bottom: 5px;"><strong>Category:</strong> {{ file.category }}</p>
+		                            <p style="font-size: 16px; margin-bottom: 10px;"><strong>Price:</strong> {{ file.price }}</p>
+		                            <p style="font-size: 16px; margin-bottom: 10px;"><strong>Rating:</strong> {{ file.rating }}</p>
+		                            <a href="{% url 'file:payment' file_id=file.id %}" style="display: inline-block; padding: 8px 16px; background-color: #FD6C01; color: white; border-radius: 5px; text-decoration: none;">Buy Book</a>
+		                        </div>
+		                    </div>
+		                {% endif %}
+		            {% endfor %}
+		        </div>
+		        {% if files|length > 6 %} {# Display "MORE BOOKS" button if there are more than 6 files #}
+		            <div style="text-align: center;">
+		                <a href="{% url 'file:files' %}" style="font-size: 18px; color: #FD6C01; text-decoration: none; font-weight: bold;">MORE BOOKS</a>
+		            </div>
+		        {% endif %}
+		    {% endif %}
+		{% endfor %}	   
 	</div>
+
+
+
+	<script>
+	    // Smooth scrolling effect
+	    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	        anchor.addEventListener('click', function(e) {
+	            e.preventDefault();
+
+	            document.querySelector(this.getAttribute('href')).scrollIntoView({
+	                behavior: 'smooth'
+	            });
+	        });
+	    });
+	</script>
+
+	    	
+		
 {% endblock %}

@@ -13,7 +13,7 @@ class NewFileForm(forms.ModelForm):
     """
     class Meta:
         model = File
-        fields = ('category', 'title', 'author', 'publication_year', 'language', 'price', 'image', 'file_type', 'file')
+        fields = ('category', 'title', 'author', 'publication_year', 'language', 'price', 'rating', 'image', 'file_type', 'file')
         widgets = {
             'category': forms.Select(attrs={'class': INPUT_CLASSES}),
             'title': forms.TextInput(attrs={'class': INPUT_CLASSES}),
@@ -21,6 +21,7 @@ class NewFileForm(forms.ModelForm):
             'publication_year': forms.TextInput(attrs={'class': INPUT_CLASSES}),
             'language': forms.TextInput(attrs={'class': INPUT_CLASSES}),
             'price': forms.TextInput(attrs={'class': INPUT_CLASSES}),
+            'rating': forms.TextInput(attrs={'class': INPUT_CLASSES}),
             'image': forms.FileInput(attrs={'class': INPUT_CLASSES}),
             'file_type': forms.Select(attrs={'class': INPUT_CLASSES}),
             'file': forms.FileInput(attrs={'class': INPUT_CLASSES})
@@ -36,10 +37,13 @@ class EditFileForm(forms.ModelForm):
     """
     class Meta:
         model = File
-        fields = ('author', 'price', 'image', 'available')
+        fields = ('author', 'category', 'title', 'price', 'image', 'file', 'available', )
         widgets = {
             'author': forms.TextInput(attrs={'class': INPUT_CLASSES}),
+            'title': forms.TextInput(attrs={'class': INPUT_CLASSES}),
+            'category': forms.Select(attrs={'class': INPUT_CLASSES}),
             'price': forms.TextInput(attrs={'class': INPUT_CLASSES}),
             'image': forms.FileInput(attrs={'class': INPUT_CLASSES}),
+            'file': forms.FileInput(attrs={'class': INPUT_CLASSES}),
             'available': forms.CheckboxInput(attrs={'class': INPUT_CLASSES})
         }

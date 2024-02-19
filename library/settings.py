@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-#igxm8aa_y*)mgppu$edx@$84r^n7u+vvcfy(y7d7t)b_**mf!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/index/'
-LOGOUT_REDIRECT_URL = '/logout/'
+#LOGOUT_REDIRECT_URL = '/logout/'
 
 # Application definition
 
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'library.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'digi_library',
+        'USER': 'cocky',
+        'PASSWORD': 'Maverick@2021',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
@@ -125,9 +129,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

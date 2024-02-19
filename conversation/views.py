@@ -40,7 +40,7 @@ def new_conversation(request, file_pk):
         if form.is_valid():
             conversation = Conversation.objects.create(file=file)
             conversation.members.add(request.user)
-            conversation.members.add(item.created_by)
+            conversation.members.add(file.created_by)
             conversation.save()
 
             conversation_message = form.save(commit=False)

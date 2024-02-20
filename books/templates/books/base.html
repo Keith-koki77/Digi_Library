@@ -5,12 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{% block title %}{% endblock %}| Digi_Library</title>
 		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 	</head>
 
 	<body style="background-color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; padding: 2rem; color: #333; margin: 0; min-height: 100vh; display: flex; flex-direction: column; ">
-		<nav style="padding: 1.5rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb;">
+		<nav style="padding: 1.5rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid #FD6C01;">
 
-			<a href="/" class="text-xl font-semibold" style="text-decoration:blink; color: gray; font-family: Arial, sans-serif; font-size: 2.25rem; font-weight: 600;">DIGI-LIBRARY</a>
+			<a href="/" class="text-xl font-semibold" style="text-decoration:blink; color: gray; font-family: Arial, sans-serif; font-size: 2.25rem; font-weight: 600;">
+    			📚 DIGI-LIBRARY <span style="font-size: 1.5rem; vertical-align: middle;">&amp;</span> 🖥️
+			</a>
 
 			<div class="space-x-6">
 				{% block extra_css %}
@@ -118,7 +121,7 @@
 					<div>
 						<h3 class="text-lg font-semibold mb-2">Quick Links</h3>
 						<ul>
-							<li><a href="">Home</a></li
+							<li><a href="/">Home</a></li
 							<li><a href="{% url 'books:contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
 							<li><a href="{% url 'books:reviews' %}" class="text-lg text-teal-500 hover:text-teal-700">Testimonial</a></li>
 						</ul>

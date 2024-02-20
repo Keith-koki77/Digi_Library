@@ -11,20 +11,21 @@ from django.contrib.auth import logout as auth_logout
 
 
 def index(request):
-    """
-    This function handles the index page.
-    
-    :param request: The HTTP request object.
-    :return: The rendered index page with categories and items.
-    """
-    files = File.objects.filter(available=True)[0:6]
+    # Fetch all featured books
+    files = File.objects.all()
+
+    # Fetch files by category for display
+    files_by_category = {}
     categories = Category.objects.all()
+    for category in categories:
+        files_by_category[category] = File.objects.filter(category=category)
 
-    return render(request, 'books/index.html', {
-        'categories': categories,
+    context = {
         'files': files,
-    })
+        'files_by_category': files_by_category,
+    }
 
+    return render(request, 'books/index.html', context)
 
 
 def landing(request):

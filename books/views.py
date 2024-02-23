@@ -6,7 +6,6 @@ from .forms import SignupForm
 
 from django.contrib.auth import logout
 
-from django.contrib.auth import logout as auth_logout
 
 
 
@@ -62,6 +61,26 @@ def contact(request):
     :return: The rendered review page.
     """
     return render(request, 'books/contact.html')
+
+
+def faqs(request):
+    """
+     This function handles the FAQS page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered review page.
+    """
+    return render(request, 'books/faqs.html')
+
+
+def privacy(request):
+    """
+     This function handles the Pricacy & Policy page.
+    
+    :param request: The HTTP request object.
+    :return: The rendered review page.
+    """
+    return render(request, 'books/privacy.html')
 
 
 def about(request):
@@ -122,7 +141,7 @@ def logout(request):
     :param request: The HTTP request object.
     :return: The rendered logout page.
     """
-    return render(request, 'books/landing.html')
+    return render(request, 'books/logout.html')
 
 
 

@@ -3,7 +3,7 @@
 {% block title %}Books{% endblock %}
 
 {% block content %}
-    <div style="padding-bottom: 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 1rem; background-color: #f3f4f6; font-family: Arial, sans-serif;">
+    <div style="padding-bottom: 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 1rem; background-color: #f3f4f6; font-family: Arial, sans-serif; margin-top: 45px;">
         <div class="col-span-1">
             <form method="get" action="{% url 'file:files' %}">
                 <input name="query" class="w-full py-4 px-6 border rounded-xl" type="text" value="{{ query }}" placeholder="Find a business, fiction, self-help book...">

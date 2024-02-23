@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from dotenv import load_dotenv
 from pathlib import Path
 import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/index/'
-#LOGOUT_REDIRECT_URL = '/logout/'
+LOGOUT_REDIRECT_URL = '/logout/'
 
 # Application definition
 
@@ -81,14 +84,17 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'digi_library',
-        'USER': 'cocky',
-        'PASSWORD': 'Maverick@2021',
-        'HOST': 'localhost',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'), # For local development, use 'localhost' or '127.0.0.1'
+        'PORT': os.environ.get('DATABASE_PORT'), # Default PostgreSQL port is usually '5432'
     }
 }
 

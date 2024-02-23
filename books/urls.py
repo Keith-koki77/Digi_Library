@@ -15,6 +15,11 @@ urlpatterns = [
 	path('about/', views.about, name='about'),
     path('pricing/', views.pricing, name='pricing'),
     path('contact/', views.contact, name='contact'),
+    path('faqs/', views.faqs, name='faqs'),
+    path('privacy/', views.privacy, name='privacy'),
    	path('login/', auth_views.LoginView.as_view(template_name='books/login.html', authentication_form=LoginForm), name='login'),
-   	path('logout/', auth_views.LogoutView.as_view(template_name='books/logout.html'), name='logout'),
+ 	path('logout/', auth_views.LogoutView.as_view(next_page=''), name='logout'),
 ]
+
+
+

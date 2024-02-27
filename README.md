@@ -119,11 +119,14 @@ The architecture of a Django project typically follows the Model-View-Controller
 
 ```
 ## IMAGE SNIPPETS
+
+![Screenshot from 2024-02-27 12-07-04](https://github.com/Keith-koki77/Digi_Library/assets/122968859/8945b896-aabc-496e-8bda-80398b04f4f2)
+
 ![Screenshot from 2024-02-27 12-02-52](https://github.com/Keith-koki77/Digi_Library/assets/122968859/c92090a0-75aa-42d3-8821-4172d7b23bdc)
 
 ![Screenshot from 2024-02-27 12-03-13](https://github.com/Keith-koki77/Digi_Library/assets/122968859/24267f00-fcfa-4b50-ae79-a5a1a6f1aac0)
 
-![Screenshot from 2024-02-27 12-07-04](https://github.com/Keith-koki77/Digi_Library/assets/122968859/8945b896-aabc-496e-8bda-80398b04f4f2)
+
 
 
 

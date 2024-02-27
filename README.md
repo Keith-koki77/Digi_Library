@@ -1,5 +1,6 @@
 # DIGI-LIBRARY
-![Screenshot from 2024-02-27 12-02-52](https://github.com/Keith-koki77/Digi_Library/assets/122968859/c92090a0-75aa-42d3-8821-4172d7b23bdc)
+![Screenshot from 2024-02-27 12-01-48](https://github.com/Keith-koki77/Digi_Library/assets/122968859/a86b5e0b-2c33-4ce3-a971-4a3e31f7fff7)
+
 
 ## INTRODUCTION
 * Digi library is an online platform that is aiming to provide digital access to books that are hard to buy or access.
@@ -117,4 +118,12 @@ The architecture of a Django project typically follows the Model-View-Controller
         Django provides built-in form classes and validation methods to simplify form handling.
 
 ```
+## IMAGE SNIPPETS
+![Screenshot from 2024-02-27 12-02-52](https://github.com/Keith-koki77/Digi_Library/assets/122968859/c92090a0-75aa-42d3-8821-4172d7b23bdc)
+
+![Screenshot from 2024-02-27 12-03-13](https://github.com/Keith-koki77/Digi_Library/assets/122968859/24267f00-fcfa-4b50-ae79-a5a1a6f1aac0)
+
+![Screenshot from 2024-02-27 12-07-04](https://github.com/Keith-koki77/Digi_Library/assets/122968859/8945b896-aabc-496e-8bda-80398b04f4f2)
+
+
 

@@ -1,4 +1,5 @@
 # DIGI-LIBRARY
+![Screenshot from 2024-02-27 12-02-52](https://github.com/Keith-koki77/Digi_Library/assets/122968859/c92090a0-75aa-42d3-8821-4172d7b23bdc)
 
 ## INTRODUCTION
 * Digi library is an online platform that is aiming to provide digital access to books that are hard to buy or access.
